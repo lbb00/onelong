@@ -1,5 +1,5 @@
-<template>
-  <div class="container"></div>
+<template lang="pug">
+  h1 onelong 开发中...
 </template>
 
 <script>
