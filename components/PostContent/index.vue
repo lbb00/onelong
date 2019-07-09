@@ -19,7 +19,7 @@ export default {
 
 <style lang="scss">
 @import 'highlight.js/styles/atom-one-dark.css';
-@import './markdown.css';
+@import '../../assets/style/markdown.scss';
 .post {
   box-sizing: border-box;
   width: 92%;

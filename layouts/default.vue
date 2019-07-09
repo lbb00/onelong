@@ -1,7 +1,16 @@
-<template>
-  <div>
-    <nuxt />
-  </div>
+<template lang="pug">
+div.light
+  Header
+  nuxt
 </template>
-
-<style lang="scss"></style>
+<script>
+import Header from '@/components/Header'
+export default {
+  components: {
+    Header
+  }
+}
+</script>
+<style lang="scss">
+@import '../assets/style/rest.css';
+</style>

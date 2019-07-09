@@ -1,8 +1,8 @@
 <template lang="pug">
 div(:key='$route.params.pathMatch')
-  div.title {{ attributes.title }}
+  div.data {{attributes.date}}
+  div.update {{attributes.update}}
   div.subtitle
-    | Published on {{attributes.ctime}}
     | by {{ attributes.author }}
   PostContent(:content='content')
 
@@ -10,11 +10,8 @@ div(:key='$route.params.pathMatch')
 
 <script>
 import fm from 'front-matter'
-import hljs from 'highlight.js/lib/highlight'
-import javascript from 'highlight.js/lib/languages/javascript'
-
+import hljs from 'highlight.js'
 import PostContent from '@/components/PostContent'
-hljs.registerLanguage('javascript', javascript)
 
 const md = require('markdown-it')({
   html: true,
@@ -24,7 +21,7 @@ const md = require('markdown-it')({
     if (lang && hljs.getLanguage(lang)) {
       try {
         return (
-          '<pre class="hljs"><code>' +
+          '<pre><code class="hljs">' +
           hljs.highlight(lang, str, true).value +
           '</code></pre>'
         )
@@ -41,13 +38,14 @@ export default {
   components: {
     PostContent
   },
-  async asyncData({ params }) {
+  async asyncData({ params, payload }) {
     try {
-      const fileContent = await import(`@/posts/${params.pathMatch}.md`)
-      const res = fm(fileContent.default)
+      const content = fm(
+        payload || (await import(`@/posts/${params.pathMatch}.md`)).default
+      )
       return {
-        attributes: res.attributes,
-        content: md.render(res.body)
+        attributes: content.attributes,
+        content: md.render(content.body)
       }
     } catch {
       return {

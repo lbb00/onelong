@@ -1,5 +1,8 @@
 <template lang="pug">
-div 我是postList
+div
+  div 我是postList
+  ul
+    li
 </template>
 
 <script>

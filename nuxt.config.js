@@ -1,30 +1,16 @@
-import glob from 'glob'
-
+import { getPosts } from './helper/posts'
+import head from './head'
 export default {
   mode: 'universal',
-  head: {
-    title: 'onelong',
-    meta: [
-      { charset: 'utf-8' },
-      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      {
-        hid: 'description',
-        name: 'description',
-        content: '可能是个无趣的人吧,曹云龙,软件工程师'
-      }
-    ],
-    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }]
-  },
+  modern: 'client',
+  head: head,
   loading: { color: '#fff' },
   css: [],
   plugins: [],
   generate: {
-    routes() {
-      const files = glob.sync('**/*.md', { cwd: 'posts' })
-      return files.map((post, _) => {
-        const slug = post.substr(0, post.lastIndexOf('.'))
-        return `/post/${slug}`
-      })
+    routes: async () => {
+      const posts = await getPosts()
+      return posts
     }
   },
   modules: ['@nuxtjs/axios', '@nuxtjs/pwa', '@nuxtjs/eslint-module'],
