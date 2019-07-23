@@ -21,7 +21,7 @@ module.exports = {
       autoprefixer: false
     },
 
-    /* Only H5 */
+    /* Only H5 vw移动端适配 */
     'postcss-px-to-viewport': {
       viewportWidth: 750,
       viewportHeight: 1334,

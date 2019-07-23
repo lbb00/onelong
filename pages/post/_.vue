@@ -5,7 +5,7 @@ div(:key='$route.params.pathMatch')
   div.subtitle
     | by {{ attributes.author }}
   PostContent(:content='content')
-
+  div 如有问题欢迎在Github Issues提问
 </template>
 
 <script>
