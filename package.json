@@ -14,6 +14,7 @@
     "generate": "nuxt generate",
     "now-build": "nuxt generate"
   },
+  "engines": { "node": "12.x" },
   "dependencies": {
     "@nuxtjs/axios": "^5.3.6",
     "@nuxtjs/pwa": "^2.6.0",
