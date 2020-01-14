@@ -2,9 +2,13 @@
 
 > My pioneering Nuxt.js project
 
+## Reference
+
+- https://regenrek.com/posts/create-a-frontmatter-markdown-powered-blog-with-nuxt.js
+
 ## Build Setup
 
-``` bash
+```bash
 # install dependencies
 $ npm install
 

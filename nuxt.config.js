@@ -1,4 +1,4 @@
-import { getPosts } from './helper/posts'
+import getPostRoutes from './helper/getPostsRoute'
 import head from './head'
 export default {
   mode: 'universal',
@@ -8,9 +8,8 @@ export default {
   css: [],
   plugins: [],
   generate: {
-    routes: async () => {
-      const posts = await getPosts()
-      return posts
+    routes: () => {
+      return getPostRoutes()
     }
   },
   modules: ['@nuxtjs/axios', '@nuxtjs/pwa', '@nuxtjs/eslint-module'],

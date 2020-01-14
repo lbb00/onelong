@@ -5,25 +5,17 @@ header
       li
         nuxt-link(to='/') 首页
       li
-        nuxt-link(to='/posts') 文章
+        nuxt-link(to='/post') 文章
       li
         a(href='https://github.com/loveonelong') Github
 </template>
 
 <script>
 export default {
-  name: '',
-  components: {},
-  mixins: {},
-  props: {},
+  name: 'Header',
   data() {
     return {}
-  },
-  computed: {},
-  watch: {},
-  created() {},
-  mounted() {},
-  methods: {}
+  }
 }
 </script>
 

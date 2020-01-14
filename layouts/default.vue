@@ -1,13 +1,16 @@
 <template lang="pug">
 div.light
-  Header
+  TheHeader
   nuxt
+  TheFooter
 </template>
 <script>
-import Header from '@/components/Header'
+import TheHeader from '@/components/TheHeader'
+import TheFooter from '@/components/TheFooter'
 export default {
   components: {
-    Header
+    TheHeader,
+    TheFooter
   }
 }
 </script>

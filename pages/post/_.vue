@@ -25,7 +25,7 @@ const md = require('markdown-it')({
           hljs.highlight(lang, str, true).value +
           '</code></pre>'
         )
-      } catch (__) {}
+      } catch (_) {}
     }
 
     return (
@@ -41,7 +41,7 @@ export default {
   async asyncData({ params, payload }) {
     try {
       const content = fm(
-        payload || (await import(`@/posts/${params.pathMatch}.md`)).default
+        (await import(`@/posts/${params.pathMatch}.md`)).default
       )
       return {
         attributes: content.attributes,
