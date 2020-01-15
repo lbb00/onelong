@@ -1,5 +1,5 @@
 <template lang="pug">
-article.post.markdown-css(v-html='content')
+article.post-content.markdown-css(v-html='content')
 </template>
 
 <script>
@@ -20,17 +20,18 @@ export default {
 <style lang="scss">
 @import 'highlight.js/styles/atom-one-dark.css';
 @import '../../assets/style/markdown.scss';
-.post {
+.post-content {
   box-sizing: border-box;
   width: 92%;
   margin: 0 auto;
 }
 @media screen and (max-width: 1200px) {
   .markdown-css {
-    font-size: 14px;
     padding: 16px 20px;
+
+    font-size: 14px;
   }
-  .post {
+  .post-content {
     width: 100%;
   }
 }

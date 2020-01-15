@@ -1,5 +1,6 @@
 <template lang="pug">
-header
+header.the-header
+  div.tip FBI Warning: 网站还在施工中喔！☆(￣▽￣)/
   nav
     ul.nav
       li
@@ -7,7 +8,7 @@ header
       li
         nuxt-link(to='/post') 文章
       li
-        a(href='https://github.com/loveonelong') Github
+        a(href='https://github.com/loveonelong' target='__blank') Github
 </template>
 
 <script>
@@ -20,10 +21,31 @@ export default {
 </script>
 
 <style lang="scss">
-.nav {
-  display: flex;
-  > li {
-    margin: 1em;
+.the-header {
+  position: sticky;
+  top: 0;
+  left: 0;
+  z-index: 99;
+
+  background: #fff;
+  .tip {
+    height: 50px;
+
+    font-weight: 600;
+    line-height: 50px;
+    text-align: center;
+    color: rgb(252, 77, 34);
+  }
+  .nav {
+    display: flex;
+
+    font-weight: 500;
+    > li {
+      margin: 1em;
+    }
+    a {
+      color: #333;
+    }
   }
 }
 </style>

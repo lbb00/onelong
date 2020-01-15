@@ -1,16 +1,16 @@
 <template lang="pug">
 div
   HomeScreen
-  section
-    h2 文章
-    ul
-      li
+  HomePosts(:posts='posts')
   HomeStockPositions(:positions='positions')
 </template>
 
 <script>
+import getPosts from '@/helper/getPosts'
+
 import HomeScreen from '@/components/HomeScreen'
 import HomeStockPositions from '@/components/HomeStockPositions'
+import HomePosts from '@/components/HomePosts/index'
 
 const positionsData = [
   {
@@ -103,7 +103,8 @@ const positionsData = [
 export default {
   components: {
     HomeScreen,
-    HomeStockPositions
+    HomeStockPositions,
+    HomePosts
   },
   asyncData() {
     const positions = {}
@@ -114,7 +115,7 @@ export default {
       }
       positions[industry].push(item)
     })
-    return { positions }
+    return { positions, posts: getPosts() }
   }
 }
 </script>

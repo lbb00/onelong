@@ -35,5 +35,5 @@ export default {
       content: ''
     }
   ],
-  link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }]
+  link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.20200116.ico' }]
 }

@@ -1,40 +1,24 @@
 <template lang="pug">
-div.page-posts
-  div.page-posts__wrap
-    div
-      input#posts-search
-      label(for='posts-search') 搜索
-    ul
-      li 默认
-      li 分类
-      li 标签
-    ul.post-list
+  section.home-posts
+    h2.title 最近文章
+    ul.list
       li(v-for='post in posts')
         nuxt-link(:to='getPostLink(post.id)')
           div.post
-            h2 {{post.name}}
+            h3 {{post.name}}
+
+    div.more
+      nuxt-link(to='/post') More...
 </template>
 
 <script>
-import getPosts from '~/helper/getPosts'
-
 export default {
-  name: '',
-  components: {},
-  mixins: {},
-  props: {},
-  data() {
-    return {}
-  },
-  computed: {},
-  watch: {},
-  asyncData() {
-    return {
-      posts: getPosts()
+  props: {
+    posts: {
+      type: Array,
+      default: () => []
     }
   },
-  created() {},
-  mounted() {},
   methods: {
     getPostLink(postId) {
       return `post/${this.posts[postId].path}`
@@ -44,16 +28,22 @@ export default {
 </script>
 
 <style lang="scss">
-.page-posts {
-  &__wrap {
-    margin: 30px 60px;
+.home-posts {
+  margin-top: 40px;
+  padding: 0 60px;
+  .title {
+    font-weight: 500;
+    font-size: 24px;
   }
-  .post-list {
-    margin-top: 30px;
+  .list {
+    display: flex;
+
+    margin-left: -20px;
     li {
       display: block;
+      flex: 1 0 0;
 
-      margin-top: 20px;
+      margin: 20px 0 0 20px;
       padding: 20px 16px;
 
       border-radius: 4px;
@@ -69,10 +59,24 @@ export default {
         display: block;
 
         height: 100%;
+
+        color: #333;
       }
       h2 {
         font-weight: 500;
       }
+    }
+  }
+  .more {
+    display: flex;
+    justify-content: center;
+
+    margin-top: 20px;
+
+    a {
+      padding: 5px 10px;
+
+      text-align: center;
     }
   }
 }
