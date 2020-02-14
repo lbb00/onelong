@@ -24,6 +24,7 @@ export default {
 </script>
 
 <style lang="scss">
+@import '~/assets/style/var.scss';
 .the-footer {
   &__wrap {
     position: absolute;
@@ -48,7 +49,7 @@ export default {
     text-align: center;
     color: #fff;
 
-    background: #000;
+    background: $main-black;
   }
   .copyright {
     margin-right: 20px;

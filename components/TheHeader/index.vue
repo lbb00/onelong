@@ -1,14 +1,14 @@
 <template lang="pug">
 header.the-header
   div.tip FBI Warning: 网站还在施工中喔！☆(￣▽￣)/
-  nav
-    ul.nav
-      li
-        nuxt-link(to='/') 首页
-      li
-        nuxt-link(to='/post') 文章
-      li
-        a(href='https://github.com/loveonelong' target='__blank') Github
+  //- nav
+  //-   ul.nav
+  //-     li
+  //-       nuxt-link(to='/') 首页
+  //-     li
+  //-       nuxt-link(to='/post') 文章
+  //-     li
+  //-       a(href='https://github.com/loveonelong' target='__blank') Github
 </template>
 
 <script>

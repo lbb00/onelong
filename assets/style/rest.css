@@ -1,5 +1,7 @@
 html {
-  /* 让字体颜色更有质感 */
+  font-size: 62.5%;
+
+/* 让字体颜色更有质感 */
   color: #333;
 
 /* 侧重文本的可读性（清晰度），而不是渲染速度和几何精度。 */
@@ -26,7 +28,7 @@ button,
 input,
 select,
 textarea {
-  font: 300 1em/1 PingFang SC, Lantinghei SC, Microsoft Yahei, Hiragino Sans GB,
+  font: 400 1.4rem/1.5 PingFang SC, Lantinghei SC, Microsoft Yahei, Hiragino Sans GB,
   Microsoft Sans Serif, WenQuanYi Micro Hei, sans;
 }
 
@@ -57,6 +59,14 @@ th,
 td {
   margin: 0;
   padding: 0;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: bold;
 }
 
 /* 去除默认边框 */

@@ -14,12 +14,15 @@
     "generate": "nuxt generate",
     "now-build": "nuxt generate"
   },
-  "engines": { "node": "12.x" },
+  "engines": {
+    "node": "12.x"
+  },
   "dependencies": {
     "@nuxtjs/axios": "^5.3.6",
     "@nuxtjs/pwa": "^2.6.0",
     "highlight.js": "^9.15.8",
-    "nuxt": "^2.0.0"
+    "nuxt": "^2.0.0",
+    "reading-time": "^1.2.0"
   },
   "devDependencies": {
     "@nuxtjs/eslint-config": "^0.0.1",

@@ -1,7 +1,8 @@
 <template lang="pug">
-div.main.light
+div.light
   TheHeader
-  nuxt
+  main.main
+    nuxt
   TheFooter
 </template>
 <script>
@@ -16,20 +17,29 @@ export default {
 </script>
 <style lang="scss">
 @import '../assets/style/rest.css';
+@import '../assets/style/var.scss';
 * {
   box-sizing: border-box;
 }
-.main {
+.light {
   position: relative;
 
-  min-height: 100vh;
+  font-size: 1.4rem;
+
+  background: $main-bg;
+}
+
+.main {
+  padding: 0 4vw;
+
+  color: $main-black;
 }
 a,
 a:hover,
 a:visited,
 a:link,
 a:active {
-  color: #088fcd;
+  color: $main-color;
   text-decoration: none;
 }
 </style>

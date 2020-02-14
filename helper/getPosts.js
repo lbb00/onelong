@@ -6,7 +6,8 @@ export default function getPosts() {
     return {
       id: index,
       name: name,
-      path
+      path,
+      content: resolve[index]
     }
   })
   return posts

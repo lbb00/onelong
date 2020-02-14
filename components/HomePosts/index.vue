@@ -1,27 +1,19 @@
 <template lang="pug">
   section.home-posts
-    h2.title 最近文章
-    ul.list
-      li(v-for='post in posts')
-        nuxt-link(:to='getPostLink(post.id)')
-          div.post
-            h3 {{post.name}}
-
-    div.more
+    div.home-posts__list
+      HomePostCard(v-for='post in posts' :post='post' :key='post.name')
+    div.home-posts__more
       nuxt-link(to='/post') More...
 </template>
 
 <script>
+import HomePostCard from '@/components/HomePostCard'
 export default {
+  components: { HomePostCard },
   props: {
     posts: {
       type: Array,
       default: () => []
-    }
-  },
-  methods: {
-    getPostLink(postId) {
-      return `post/${this.posts[postId].path}`
     }
   }
 }
@@ -29,55 +21,18 @@ export default {
 
 <style lang="scss">
 .home-posts {
-  margin-top: 40px;
-  padding: 0 60px;
-  .title {
-    font-weight: 500;
-    font-size: 24px;
-  }
-  .list {
+  margin-top: 35vh;
+  &__list {
+    position: relative;
+
     display: flex;
+    flex-wrap: wrap;
 
-    margin-left: -20px;
-    li {
-      display: block;
-      flex: 1 0 0;
-
-      margin: 20px 0 0 20px;
-      padding: 20px 16px;
-
-      border-radius: 4px;
-      box-shadow: 2px 2px 6px #f2f2f2;
-      cursor: pointer;
-
-      transition: transform 0.2s ease-in-out;
-      &:hover {
-        background: #fafafa;
-        transform: scaleY(1.15) scaleX(1.05);
-      }
-      > a {
-        display: block;
-
-        height: 100%;
-
-        color: #333;
-      }
-      h2 {
-        font-weight: 500;
-      }
-    }
+    margin: 0 -20px;
+    padding: 10px 0 0;
   }
-  .more {
-    display: flex;
-    justify-content: center;
-
-    margin-top: 20px;
-
-    a {
-      padding: 5px 10px;
-
-      text-align: center;
-    }
+  &__more {
+    text-align: center;
   }
 }
 </style>

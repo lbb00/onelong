@@ -1,11 +1,8 @@
 <template lang="pug">
-div(:key='$route.params.pathMatch')
-  div.data {{attributes.date}}
-  div.update {{attributes.update}}
-  div.subtitle
-    | by {{ attributes.author }}
-  PostContent(:content='content')
-  div 如有问题欢迎在Github Issues提问
+div.page-post(:key='$route.params.pathMatch')
+  div.page-post__cover
+  div.page-post__content
+    PostContent(:content='content')
 </template>
 
 <script>
@@ -65,5 +62,31 @@ export default {
 }
 </script>
 
-@import './markdown.css';
-<style lang="scss"></style>
+<style lang="scss">
+@import '~/assets/style/markdown.scss';
+@import '~/assets/style/var.scss';
+.page-post {
+  &__cover {
+    height: 50vh;
+    margin: 0 -4vw;
+
+    background: $main-grey;
+  }
+  &__content {
+    margin: -40px -4vw 0;
+    overflow: hidden;
+
+    background: #fff;
+    border-radius: 12px 12px 0 0;
+  }
+}
+
+@media screen and(min-width: 1024px) {
+  .page-post {
+    &__content {
+      width: 100%;
+      margin: -40px 0 0;
+    }
+  }
+}
+</style>
